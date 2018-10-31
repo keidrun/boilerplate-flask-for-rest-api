@@ -1,3 +1,68 @@
-# boilerplate-flask-for-rest-api
+# boilerplate-flask-for-rest-api-with-vscode [![Build Status][travis-image]][travis-url] [![License: MIT][license-image]][license-url]
 
-Boilerplate of Flask for REST API
+Boilerplate of Flask for REST API with VSCode
+
+## Required
+
+- Docker installed
+
+## Let's begin developing
+
+```bash
+git clone https://github.com/keidrun/boilerplate-flask-for-rest-api-with-vscode.git
+cd boilerplate-flask-for-rest-api-with-vscode
+docker-compose up
+```
+
+## Develop with debugging (Remote Debugging)
+
+### 0. Prepare
+
+It's necessary to insatll `ptvsd` locally for Remote Debugging.
+
+```bash
+pip install ptvsd
+```
+
+### 1. Turn on remote debugging mode
+
+Set `FLASK_ENV=debugging` in `docker-compose.yml`.
+
+```yaml
+...
+    environment:
+      - FLASK_ENV=debugging
+...
+``````
+
+### 2. Run Docker
+
+```bash
+docker-compose up
+``````
+
+### 3. Attach to Docker Contaeiner from VSCode
+
+Execute debugging in VSCode
+
+## Develop with testing
+
+```bash
+docker-compose -f docker-compose.test.yml up -d
+docker-compose -f docker-compose.test.yml exec web pytest -sv --cov=src --cov-report term-missing test/
+```
+
+## API endpoints
+
+|  Method  |       URI        |         Data          |
+| -------- | ---------------- | --------------------- |
+|   POST   |  /api/users      | name,age,gender,email |
+|   GET    |  /api/users      |           -           |
+|   GET    |  /api/users/:id  |           -           |
+|   PUT    |  /api/users/:id  | name,age,gender,email |
+|  DELETE  |  /api/users/:id  |           -           |
+
+[travis-url]: https://travis-ci.org/keidrun/boilerplate-flask-for-rest-api-with-vscode
+[travis-image]: https://secure.travis-ci.org/keidrun/boilerplate-flask-for-rest-api-with-vscode.svg?branch=master
+[license-url]: https://opensource.org/licenses/MIT
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg

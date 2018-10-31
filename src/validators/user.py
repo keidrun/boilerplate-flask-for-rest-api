@@ -1,9 +1,9 @@
-from marshmallow import Schema, fields,  validates, ValidationError
+from marshmallow import Schema, fields, validates, ValidationError
 
 __all__ = ['UserPostSchema', 'UserPutSchema']
 
 
-def _validate_gender(gender):
+def _check_gender(gender):
     if not gender in ['male', 'female']:
         raise ValidationError("Gender must be 'male' or 'female'")
 
@@ -16,7 +16,7 @@ class UserPostSchema(Schema):
 
     @validates('gender')
     def validate_gender(self, value):
-        _validate_gender(value)
+        _check_gender(value)
 
 
 class UserPutSchema(Schema):
@@ -27,4 +27,4 @@ class UserPutSchema(Schema):
 
     @validates('gender')
     def validate_gender(self, value):
-        _validate_gender(value)
+        _check_gender(value)

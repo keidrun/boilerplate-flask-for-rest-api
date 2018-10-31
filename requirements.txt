@@ -1,6 +1,1 @@
-ptvsd
-Flask
-flask_restful
-flask_cors
-marshmallow
-pymongo
+-r run-requires.txt
