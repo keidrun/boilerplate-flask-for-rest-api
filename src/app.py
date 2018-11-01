@@ -35,12 +35,12 @@ def user_exists(email):
 def convert_user_object_from(user_doc):
     user = {}
     user['_id'] = str(user_doc['_id'])
-    user['name'] = str(user_doc['name'])
+    user['name'] = user_doc['name']
     if 'age' in user_doc:
         user['age'] = user_doc['age']
     if 'gender' in user_doc:
         user['gender'] = user_doc['gender']
-    user['email'] = str(user_doc['email'])
+    user['email'] = user_doc['email']
     return user
 
 

@@ -1,4 +1,4 @@
-# boilerplate-flask-for-rest-api-with-vscode [![Build Status][travis-image]][travis-url] [![License: MIT][license-image]][license-url]
+# boilerplate-flask-for-rest-api-with-vscode [![Build Status][travis-image]][travis-url] [![Coverage][codecov-image]][codecov-url] [![License: MIT][license-image]][license-url]
 
 Boilerplate of Flask for REST API with VSCode
 
@@ -73,5 +73,7 @@ docker-compose -f docker-compose.test.yml exec web pytest -sv --cov=src --cov-re
 
 [travis-url]: https://travis-ci.org/keidrun/boilerplate-flask-for-rest-api-with-vscode
 [travis-image]: https://secure.travis-ci.org/keidrun/boilerplate-flask-for-rest-api-with-vscode.svg?branch=master
+[codecov-url]: https://codecov.io/gh/keidrun/boilerplate-flask-for-rest-api-with-vscode
+[codecov-image]: https://codecov.io/gh/keidrun/boilerplate-flask-for-rest-api-with-vscode/branch/master/graph/badge.svg
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg

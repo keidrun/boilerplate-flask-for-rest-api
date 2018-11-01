@@ -10,6 +10,7 @@ services:
       - "5000:5000"
     environment:
       - FLASK_ENV=testing
+      - CODECOV_TOKEN=${CODECOV_TOKEN}
     volumes:
       - .:/usr/src/app
     links:

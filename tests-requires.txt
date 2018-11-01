@@ -3,4 +3,4 @@ pytest-cov
 pytest-xdist
 pytest-pythonpath
 pytest-warnings
-webtest
+codecov

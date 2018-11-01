@@ -2,6 +2,9 @@ FROM python:3.7.1-slim-stretch
 
 WORKDIR /usr/src/app
 
+RUN apt-get update \
+  && apt-get install -y git
+
 COPY requirements.txt ./
 COPY *-requires.txt ./
 RUN pip install --upgrade pip setuptools \
