@@ -1,7 +1,7 @@
 from utils import response
 
 
-class TestResponse(object):
+class TestResponse():
 
     def test_return_success(self):
         data = {
@@ -10,12 +10,12 @@ class TestResponse(object):
             'gender': "male",
             'email': "steve@jobs.com"
         }
-        r, httpCode = response.success(data)
+        r, status_code = response.success(data)
         assert r == {
             'status': 'success',
             'data': data
         }
-        assert httpCode == 200
+        assert status_code == 200
 
     def test_return_failure(self):
         data = {
@@ -23,9 +23,9 @@ class TestResponse(object):
                 'message': 'ERROR'
             }
         }
-        r, httpCode = response.failure(data, 400)
+        r, status_code = response.failure(data, 400)
         assert r == {
             'status': 'failure',
             'data': data
         }
-        assert httpCode == 400
+        assert status_code == 400

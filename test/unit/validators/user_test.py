@@ -3,7 +3,7 @@ import pytest
 import validators
 
 
-class TestUserPostScheme(object):
+class TestUserPostScheme():
 
     @classmethod
     def setup_class(cls):

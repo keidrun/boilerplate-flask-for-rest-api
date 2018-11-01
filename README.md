@@ -35,13 +35,22 @@ Set `FLASK_ENV=debugging` in `docker-compose.yml`.
 ...
 ``````
 
+#### FLASK_ENV
+
+|  FLASK_ENV  |                Description                |
+| ----------- | ----------------------------------------- |
+| puroduction | Activate flask puroduction mode           |
+| development | Activate flask development mode           |
+|  debugging  | Use remote debugging config and no reload |
+|  testing    | Enable flask TESTING flag                 |
+
 ### 2. Run Docker
 
 ```bash
 docker-compose up
 ``````
 
-### 3. Attach to Docker Contaeiner from VSCode
+### 3. Attach to Docker Container from VSCode
 
 Execute debugging in VSCode
 

@@ -141,6 +141,14 @@ class Users(Resource):
         if 'email' in poseted_data:
             update_user['email'] = poseted_data['email']
 
+        if not bool(update_user):
+            error_data = {
+                'errors': {
+                    'message': "Nothing to update"
+                }
+            }
+            return response.failure(error_data, 400)
+
         result = users.update_one({
             '_id': ObjectId(user_id)
         }, {
